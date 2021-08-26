@@ -25,4 +25,30 @@ my_str = "456"
 ```
 ## Packing and unpacking with \**
 
+```python
+numbers = {"one": 1, "two": 2, "three": 3}
+letters = {"a": "A", "b": "B", "c": "C"}
+combination = {**numbers, **letters}
+#{'one': 1, 'two': 2, 'three': 3, 'a': 'A', 'b': 'B', 'c': 'C'}
+```
+
+An issue is that when dictionaries share the same key, the right-most dictionary will override the values of the left most dictionary.
+
+```python
+letters = {'a': 'A', 'b': 'B', 'c': 'C'}
+fake_vowels = {'a': 'a', 'b': 'e'}
+{**letters, **fake_vowels}
+```
+
 https://medium.com/swlh/how-to-pack-and-unpack-data-in-python-tuples-and-dictionaries-55d218c65674
+
+## Cool methods
+
+### For dictionaries and sets
+update(), accepts a dictionary or keys with its values in an iterable as its argument to add to the current dict. I.e. letters.update(g='G', h='H') or letters.update({'g': 'G', 'h': 'H'}). As we can seewhen we pass an iterable, the keys should not be strings/chars.
+
+Unlike setdefault, this can override previous keys. Update can also work with sets. It unpacks values from other iterables and adds them to the set!
+
+ Do not forget that add() works with sets, not dictionaries
+
+pop() removes elements at random in sets and in dictionaries it removes the passed key. We can add a 2nd arg as a default result if the key is not in the dictionary
