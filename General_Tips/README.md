@@ -1,7 +1,5 @@
 # * and \*\*
 
-https://stackabuse.com/unpacking-in-python-beyond-parallel-assignment/
-
 How does a single * work in Python?
 
 ## Packing and unpacking with *
@@ -70,11 +68,6 @@ func(*["Welcome"], **{"to": "cat to", "site": 'StackAbuse.com'})  # func(*["Welc
 The name of the key passed in the last example must be in the passed dictionary
 ```
 
-
-
-https://medium.com/swlh/how-to-pack-and-unpack-data-in-python-tuples-and-dictionaries-55d218c65674
-
-
 ## Cool methods
 
 ### For dictionaries and sets
@@ -85,3 +78,8 @@ Unlike setdefault, this can override previous keys. Update can also work with se
  Do not forget that add() works with sets, not dictionaries
 
 pop() removes elements at random in sets and in dictionaries it removes the passed key. We can add a 2nd arg as a default result if the key is not in the dictionary
+
+# Sources
+
+- https://stackabuse.com/unpacking-in-python-beyond-parallel-assignment/
+- https://medium.com/swlh/how-to-pack-and-unpack-data-in-python-tuples-and-dictionaries-55d218c65674
