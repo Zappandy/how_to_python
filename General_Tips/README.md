@@ -40,7 +40,40 @@ fake_vowels = {'a': 'a', 'b': 'e'}
 {**letters, **fake_vowels}
 ```
 
+## Packing and Unpacking in Functions
+
+```python
+def func(required, *args, **kwargs):
+    print(required, args, kwargs, sep='\n')
+func("Hello...", 't', 'i', 't', 'o', cat="yes", alive="yes")
+#Hello...
+#('t', 'i', 't', 'o')
+#{'cat': 'yes', 'alive': 'yes'}
+def func(required, *args, **kwargs):
+    print(required, args, kwargs)
+func("Hello...")  # Hello... () {}
+
+def func(required, *args, **kwargs):
+    print(required, args, kwargs, sep='\n')
+func("Hello...", *'tito', **{"cat": "yes", "alive":"yes"})
+#Hello...
+#('t', 'i', 't', 'o')
+#{'cat': 'yes', 'alive': 'yes'}
+
+def func(welcome, to, site):
+    print(welcome, to, site)
+
+func(*["Welcome", "to"], **{"site": 'StackAbuse.com'})  # Welcome to StackAbuse.com
+func(*["Welcome"], **{"site": 'StackAbuse.com'})  # Traceback error
+func(*["Welcome"], **{"to": "cat to", "site": 'StackAbuse.com'})  # func(*["Welcome"], **{"to": "cat to", "site": 'StackAbuse.com'})
+
+The name of the key passed in the last example must be in the passed dictionary
+```
+
+
+
 https://medium.com/swlh/how-to-pack-and-unpack-data-in-python-tuples-and-dictionaries-55d218c65674
+
 
 ## Cool methods
 
